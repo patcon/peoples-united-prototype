@@ -46,7 +46,12 @@ jobs:
       - name: Create deployment structure
         run: |
           mkdir -p deploy
-          cp -r dist/* deploy/
+          # Copy landing page as main index
+          cp public/index-landing.html deploy/index.html
+          # Copy main app to /app subdirectory
+          mkdir -p deploy/app
+          cp -r dist/* deploy/app/
+          # Copy storybook to /storybook subdirectory
           mkdir -p deploy/storybook
           cp -r storybook-static/* deploy/storybook/
 

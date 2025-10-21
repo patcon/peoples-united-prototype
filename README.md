@@ -1,4 +1,4 @@
-# Peoples United
+# UnitedPeoples
 
 ## Purpose and Goals
 
@@ -72,3 +72,47 @@ npm run build-storybook
    ```
 
 The main application will be available at `http://localhost:5173` and Storybook at `http://localhost:6006`.
+
+## Deployment
+
+This project is configured with automated deployment using GitHub Actions. Every commit to the `main` branch triggers a build and deployment process.
+
+### GitHub Actions Workflow
+
+The deployment process consists of two jobs:
+
+1. **Build Job**:
+
+   - Installs dependencies
+   - Runs linting checks
+   - Builds both the main application and Storybook
+   - Creates a unified deployment structure
+   - Uploads build artifacts
+
+2. **Deploy Job**:
+   - Downloads build artifacts
+   - Deploys to GitHub Pages
+
+### Deployed Structure
+
+When deployed, the site includes:
+
+- **Landing Page**: Navigation page at the root URL (`/`)
+- **Main App**: Available at `/app/`
+- **Storybook**: Available at `/storybook/`
+
+### Setup Requirements
+
+To enable deployment for your repository:
+
+1. **Enable GitHub Pages**:
+
+   - Go to Settings → Pages
+   - Set Source to "GitHub Actions"
+
+2. **Configure Workflow Permissions**:
+   - Go to Settings → Actions → General
+   - Under "Workflow permissions", select "Read and write permissions"
+   - Check "Allow GitHub Actions to create and approve pull requests"
+
+For detailed deployment documentation, see [`.github/README.md`](.github/README.md).

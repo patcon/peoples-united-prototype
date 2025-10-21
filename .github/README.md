@@ -33,9 +33,9 @@ The deployment process consists of two jobs:
 
 The deployed site includes:
 
-- **Main App**: Available at the root URL (`/`)
+- **Landing Page**: Navigation page at the root URL (`/`)
+- **Main App**: Available at `/app/`
 - **Storybook**: Available at `/storybook/`
-- **Landing Page**: A navigation page at `/index-landing.html`
 
 ## Required Repository Settings
 
