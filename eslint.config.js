@@ -56,6 +56,12 @@ export default defineConfig([
     },
   },
   {
+    files: ['src/components/ui/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+  {
     files: ['vite.config.ts'],
     extends: [
       js.configs.recommended,

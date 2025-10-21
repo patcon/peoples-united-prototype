@@ -15,6 +15,15 @@ const config = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
+  },
+  viteFinal: async (config) => {
+    // Set the base path for GitHub Pages deployment
+    // eslint-disable-next-line no-undef
+    const repoName = process.env.VITE_GITHUB_REPO_NAME;
+    if (repoName) {
+      config.base = `/${repoName}/storybook/`;
+    }
+    return config;
   }
 };
 export default config;
